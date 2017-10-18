@@ -1058,7 +1058,7 @@ path.logs: /var/vcap/sys/log/packetbeat
 
 # Sets log level. The default log level is info.
 # Available log levels are: critical, error, warning, info, debug
-logging.level: debug
+logging.level: <%= p('packetbeat.loglevel') %>
 
 # Enable debug output for selected components. To enable all selectors use ["*"]
 # Other available selectors are "beat", "publish", "service"
@@ -1079,7 +1079,7 @@ logging.selectors: ["*"]
 
 # Logging to rotating files files. Set logging.to_files to false to disable logging to
 # files.
-logging.to_files: true
+logging.to_files: false
 logging.files:
   # Configure the path where the logs are written. The default is the logs directory
   # under the home path (the binary location).
